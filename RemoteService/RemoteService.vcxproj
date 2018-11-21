@@ -62,6 +62,9 @@
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
     <ClCompile Include="AcceptorLoop.cpp" />
+    <ClCompile Include="EpollAcceptorLoop.cpp" />
+    <ClCompile Include="EpollReadLoop.cpp" />
+    <ClCompile Include="EpollServer.cpp" />
     <ClCompile Include="IOEventLoop.cpp" />
     <ClCompile Include="ReadLoop.cpp" />
     <ClCompile Include="main.cpp" />
@@ -72,6 +75,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AcceptorLoop.h" />
+    <ClInclude Include="EpollAcceptorLoop.h" />
+    <ClInclude Include="EpollReadLoop.h" />
+    <ClInclude Include="EpollServer.h" />
     <ClInclude Include="IOEventLoop.h" />
     <ClInclude Include="ReadLoop.h" />
     <ClInclude Include="MessageParse.h" />
