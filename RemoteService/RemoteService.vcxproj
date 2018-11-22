@@ -69,6 +69,7 @@
     <ClCompile Include="ReadLoop.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MessageParse.cpp" />
+    <ClCompile Include="RobinThreadPoll.cpp" />
     <ClCompile Include="ServerSocket.cpp" />
     <ClCompile Include="Task.cpp" />
     <ClCompile Include="ThreadPooll.cpp" />
@@ -81,6 +82,7 @@
     <ClInclude Include="IOEventLoop.h" />
     <ClInclude Include="ReadLoop.h" />
     <ClInclude Include="MessageParse.h" />
+    <ClInclude Include="RobinThreadPoll.h" />
     <ClInclude Include="ServerSocket.h" />
     <ClInclude Include="Task.h" />
     <ClInclude Include="ThreadPooll.h" />
