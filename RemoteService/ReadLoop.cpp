@@ -12,6 +12,7 @@ CReadLoop::CReadLoop() : _bRunning(false), _max_fd(0)
 
 CReadLoop::~CReadLoop()
 {
+
 }
 
 void CReadLoop::Start()

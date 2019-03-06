@@ -11,7 +11,7 @@
 #include<fcntl.h>
 
 CServerSocket::CServerSocket(int port) : _sockfd(-1),
-_running(false), _max_fd(0)
+_running(false), _max_fd(0), _port(-1)
 {
 	this->_port = port;
 }
@@ -29,12 +29,15 @@ void CServerSocket::run_server()
 void CServerSocket::init_socket()
 {
 	_sockfd = socket(AF_INET, SOCK_STREAM, 0);
+
 	if (_sockfd < 0) {
 		printf("socket create failed\n");
 		exit(0);
 	}
 
 	int flag = 1;
+
+	//SO_REUSEADDR 设置端口重用防止出现 服务器进程异常关闭该端口处于time_wait状态
 	setsockopt(_sockfd, SOL_SOCKET, SO_REUSEADDR, &flag, sizeof(flag));
 
 	struct sockaddr_in addr;
@@ -60,5 +63,12 @@ void CServerSocket::stop_server()
 
 void CServerSocket::run_loop()
 {
-	
+	auto func = [&]()->int {
+		while (_running) {
+
+		}
+	};
+
+	_thread_ptr = std::make_shared<std::thread>(func);
+
 }

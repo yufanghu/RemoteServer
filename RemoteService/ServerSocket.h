@@ -15,9 +15,12 @@ public:
 	~CServerSocket();
 	void init_socket();
 	void run_server();
+
 	void stop_server();
+
 private:
 	void run_loop();
+
 private:
 	int _max_fd;
 	int _sockfd;

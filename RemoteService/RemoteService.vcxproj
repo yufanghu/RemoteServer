@@ -62,22 +62,37 @@
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
     <ClCompile Include="AcceptorLoop.cpp" />
+    <ClCompile Include="AcceptPoller.cpp" />
+    <ClCompile Include="Channel.cpp" />
+    <ClCompile Include="ConnPoller.cpp" />
+    <ClCompile Include="EPoller.cpp" />
+    <ClCompile Include="IO.cpp" />
     <ClCompile Include="IOEventLoop.cpp" />
     <ClCompile Include="ReadLoop.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MessageParse.cpp" />
     <ClCompile Include="ServerSocket.cpp" />
+    <ClCompile Include="Stock.cpp" />
+    <ClCompile Include="StockFactory.cpp" />
     <ClCompile Include="Task.cpp" />
     <ClCompile Include="ThreadPooll.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AcceptorLoop.h" />
+    <ClInclude Include="AcceptPoller.h" />
+    <ClInclude Include="Channel.h" />
+    <ClInclude Include="ConnPoller.h" />
+    <ClInclude Include="EPoller.h" />
+    <ClInclude Include="IO.h" />
     <ClInclude Include="IOEventLoop.h" />
     <ClInclude Include="ReadLoop.h" />
     <ClInclude Include="MessageParse.h" />
     <ClInclude Include="ServerSocket.h" />
+    <ClInclude Include="Stock.h" />
+    <ClInclude Include="StockFactory.h" />
     <ClInclude Include="Task.h" />
     <ClInclude Include="ThreadPooll.h" />
+    <ClInclude Include="Uncopyable.hpp" />
   </ItemGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Link>

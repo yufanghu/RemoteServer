@@ -22,8 +22,13 @@ CAcceptorLoop::~CAcceptorLoop()
 void CAcceptorLoop::Start()
 {
 	_bRunning = true;
+	while (_bRunning) {
+		
+	}
+
 	fd_set temp_set;
 	FD_SET(_listenfd, &temp_set);
+
 	int _max_fd = _listenfd;
 	while (_bRunning) {
 		fd_set fd_copy = temp_set;
