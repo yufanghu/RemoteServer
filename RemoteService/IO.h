@@ -10,7 +10,7 @@ public:
 	
 	void Write(epoll_event * pEvent);
 	
-	void Accept(epoll_event * pEvent);
+	int Accept(epoll_event * pEvent);
 private:
 
 };

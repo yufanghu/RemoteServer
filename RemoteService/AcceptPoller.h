@@ -10,5 +10,6 @@ public:
 	virtual void Wait() override;
 
 private:
+
 };
 

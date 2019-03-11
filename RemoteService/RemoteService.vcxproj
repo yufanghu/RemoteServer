@@ -66,9 +66,9 @@
     <ClCompile Include="Channel.cpp" />
     <ClCompile Include="ConnPoller.cpp" />
     <ClCompile Include="EPoller.cpp" />
+    <ClCompile Include="EventThreadPoll.cpp" />
     <ClCompile Include="IO.cpp" />
     <ClCompile Include="IOEventLoop.cpp" />
-    <ClCompile Include="ReadLoop.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MessageParse.cpp" />
     <ClCompile Include="ServerSocket.cpp" />
@@ -83,9 +83,9 @@
     <ClInclude Include="Channel.h" />
     <ClInclude Include="ConnPoller.h" />
     <ClInclude Include="EPoller.h" />
+    <ClInclude Include="EventThreadPoll.h" />
     <ClInclude Include="IO.h" />
     <ClInclude Include="IOEventLoop.h" />
-    <ClInclude Include="ReadLoop.h" />
     <ClInclude Include="MessageParse.h" />
     <ClInclude Include="ServerSocket.h" />
     <ClInclude Include="Stock.h" />

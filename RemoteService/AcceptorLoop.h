@@ -1,19 +1,16 @@
 #pragma once
-#include "IOEventLoop.h"
-
-class CAcceptorLoop : public CIOEventLoop
+#include <functional>
+typedef std::function<void(int)> FuncAccept;
+class CAcceptorLoop 
 {
 public:
-	CAcceptorLoop(int listenfd);
+	CAcceptorLoop(int _listenfd, FuncAccept func);
 	~CAcceptorLoop();
-
-	virtual void Start() override;
-
-	virtual void Stop() override;
-
+	
 private:
 	void handle_accept();
 private:
 	int _listenfd;
+	FuncAccept _callback;
 };
 

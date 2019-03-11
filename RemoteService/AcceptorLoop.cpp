@@ -11,43 +11,16 @@
 #include<fcntl.h>
 #include <stdio.h>
 
-CAcceptorLoop::CAcceptorLoop(int listenfd): _listenfd(listenfd)
+CAcceptorLoop::CAcceptorLoop(int listenfd, FuncAccept func) : _listenfd(listenfd), _callback(func)
 {
 }
 
 CAcceptorLoop::~CAcceptorLoop()
 {
+
 }
 
-void CAcceptorLoop::Start()
-{
-	_bRunning = true;
-	while (_bRunning) {
-		
-	}
 
-	fd_set temp_set;
-	FD_SET(_listenfd, &temp_set);
-
-	int _max_fd = _listenfd;
-	while (_bRunning) {
-		fd_set fd_copy = temp_set;
-		//如果ret大于0表示返回就绪的描述的个数
-		int ret = select(_max_fd + 1, &fd_copy, NULL, NULL, NULL);
-		if (ret < 0) {
-			printf("error\n");
-		}
-		else if (ret == 0) {
-			printf("timeout\n");
-		}
-		else {
-			//有可读
-			if (FD_ISSET(_listenfd, &fd_copy)) {
-				handle_accept();
-			}
-		}
-	}
-}
 
 void CAcceptorLoop::handle_accept()
 {
@@ -58,9 +31,8 @@ void CAcceptorLoop::handle_accept()
 
 	int flag = fcntl(new_fd, F_GETFL, 0);
 	fcntl(new_fd, F_SETFL, flag | O_NONBLOCK);
+
+
+	_callback(new_fd);
 }
 
-void CAcceptorLoop::Stop()
-{
-
-}

@@ -8,18 +8,20 @@ public:
 	CIOEventLoop();
 	~CIOEventLoop();
 
-	virtual void Start() = 0;
+	void Start();
 
-	virtual void Stop() = 0;
+	void Stop();
 
 	void SetPoller(std::shared_ptr<EPoller> pollerPtr);
 
 private:
-	virtual void Loop() = 0;
+	virtual void Loop();
+
+	void HandleRecv(int fd, int pos);
 
 protected:
 	std::shared_ptr<EPoller> _pollerPtr;
-	std::thread _threadPtr;
+	std::shared_ptr<std::thread> _threadPtr;
 	bool _bRunning;
 };
 

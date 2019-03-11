@@ -16,7 +16,8 @@ void CAcceptPoller::Wait()
 	for (int i = 0; i < nums; ++i) {
 		//connect or accept
 		if (ev.events&EPOLLIN) {
-			_ioPtr->Read(&ev);
+			int fd = _ioPtr->Accept(&ev);
+			//Update(ev.data.fd, EPollState::EModify);
 		}
 		else {
 			printf("err...........\n");
